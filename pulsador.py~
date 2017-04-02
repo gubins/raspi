@@ -35,7 +35,11 @@ while (time.time()< ts+60):  #El proces acabara 5 segons despres de la ultima pu
 	if ((not prev_input) and input): #
                 ts=time.time()
                 hora = datetime.datetime.fromtimestamp(ts).strftime('%d-%m-%Y %H:%M:%S')
-		sql="INSERT INTO pulsador (instant,pulsador,hora) VALUES ('" + str(ts) + "','1','" + str(hora) + "')"
+		if GPIO.input(22):
+			pulsador="1"
+		else:
+			pulsador="2"
+		sql="INSERT INTO pulsador (instant,pulsador,hora) VALUES ('" + str(ts) + "','" + str(pulsador) + "','" + str(hora) + "')"
 #		print(sql)
 #		print(input)
 		try:

@@ -48,7 +48,7 @@ while (time.time()< ts+60):  #El proces acabara 5 segons despres de la ultima pu
 		except:
 			db.rollback()
                 #st = datetime.datetime.fromtimestamp(ts).strftime('%d-%m-%Y %H:%M:%S')
-		print("Pulsador premut a l'instant "+str(hora))
+		print("Pulsador "+str(pulsador)+" premut a l'instant "+str(hora))
 		if GPIO.input(22):
 			GPIO.output(17, True)
 			time.sleep(0.1)

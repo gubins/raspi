@@ -11,6 +11,7 @@ def my_callback(22):
         GPIO.output(17, GPIO.input(22))
 GPIO.add_event_callback(22, my_callback)
 '''
+
 GPIO.setup(22,GPIO.IN)
 if GPIO.input(22):
     print('Input was HIGH')
